@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'demo/listview_demo.dart';
+import 'demo/drawer_demo.dart';
+import 'demo/bottom_navigation_bar_demo.dart';
 
 void main() => runApp(App());
 
@@ -11,7 +13,11 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Home(),
       //设置主题颜色
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+        splashColor: Colors.white70,
+      ),
     );
   }
 }
@@ -25,11 +31,11 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigration',
-            onPressed: () => debugPrint('Navigration button is pressed.'),
-          ),
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   tooltip: 'Navigration',
+          //   onPressed: () => debugPrint('Navigration button is pressed.'),
+          // ), // 默认打开抽屉
           title: Text('FLUTTER'),
           actions: <Widget>[
             IconButton(
@@ -54,11 +60,7 @@ class Home extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Icon(
-              Icons.local_florist,
-              size: 128.0,
-              color: Colors.black12,
-            ),
+            ListViewDemo(),
             Icon(
               Icons.change_history,
               size: 128.0,
@@ -71,6 +73,9 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
+        // 抽屉（默认在左边），右边：endDrawer
+        drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
   }
