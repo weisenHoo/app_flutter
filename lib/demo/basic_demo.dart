@@ -31,7 +31,11 @@ class BasicDemo extends StatelessWidget {
             ),
             // color: Color.fromRGBO(3, 54, 255, 0.8),
             padding: EdgeInsets.only(
-                left: 16.0, right: 16.0, top: 16.0, bottom: 16.0),
+              left: 16.0,
+              right: 16.0,
+              top: 16.0,
+              bottom: 16.0,
+            ),
             margin: EdgeInsets.all(8.0),
             width: 90.0,
             height: 90.0,
