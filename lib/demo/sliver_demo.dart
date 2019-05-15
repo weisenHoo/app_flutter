@@ -17,10 +17,9 @@ class SliveDemo extends StatelessWidget {
               title: Text(
                 'Weisen Flutter'.toUpperCase(),
                 style: TextStyle(
-                  fontSize: 15.0,
-                  letterSpacing: 3.0,
-                  fontWeight: FontWeight.w400
-                ),
+                    fontSize: 15.0,
+                    letterSpacing: 3.0,
+                    fontWeight: FontWeight.w400),
               ),
               background: Image.network(
                 'https://resources.ninghao.org/images/overkill.png',
@@ -31,7 +30,7 @@ class SliveDemo extends StatelessWidget {
           SliverSafeArea(
             sliver: SliverPadding(
               padding: EdgeInsets.all(8.0),
-              sliver: SliverListDemo(),
+              sliver: SliverGridDemo(),
             ),
           ),
         ],
