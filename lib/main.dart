@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// 上
 import './demo/listview_demo.dart';
 import './demo/drawer_demo.dart';
 import './demo/bottom_navigation_bar_demo.dart';
@@ -8,6 +9,8 @@ import './demo/layout_demo.dart';
 import './demo/view_demo.dart';
 import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
+// 中
+import './demo/form_demo.dart';
 
 void main() => runApp(App());
 
@@ -18,10 +21,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/', //初始路由
+      initialRoute: '/form', //初始路由
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
+        '/form': (context) => FormDemo(),
       },
       //设置主题颜色
       theme: ThemeData(
