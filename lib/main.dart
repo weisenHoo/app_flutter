@@ -32,7 +32,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.red,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
         splashColor: Colors.white70,
-        accentColor: Colors.blue[100],
+        accentColor: Colors.blue[600],
       ),
     );
   }
