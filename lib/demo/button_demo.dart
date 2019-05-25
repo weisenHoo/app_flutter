@@ -206,7 +206,7 @@ class ButtomDemo extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('ButtomDemo'),
+        title: Text('Buttom'),
         elevation: 0.0,
       ),
       body: Container(

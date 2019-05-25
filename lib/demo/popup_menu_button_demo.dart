@@ -12,7 +12,7 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PopupMenuButtonDemo'),
+        title: Text('PopupMenuButton'),
         elevation: 0.0,
       ),
       body: Container(

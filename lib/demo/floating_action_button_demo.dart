@@ -19,7 +19,7 @@ class FloatingActionButtonDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FloatingActionButtonDemo'),
+        title: Text('FloatingActionButton'),
         elevation: 0.0,
       ),
       floatingActionButton: _floatingActionButton,
