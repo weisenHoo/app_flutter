@@ -14,13 +14,15 @@ class DrawerDemo extends StatelessWidget {
             accountEmail: Text('306429737@qq.com'),
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage(
-                  'https://storage.live.com/Users/8181548024425148840/MyProfile/ExpressionProfile/ProfilePhoto:Win8Static,UserTileMedium,UserTileStatic'),
+                'https://storage.live.com/Users/8181548024425148840/MyProfile/ExpressionProfile/ProfilePhoto:Win8Static,UserTileMedium,UserTileStatic',
+              ),
             ),
             decoration: BoxDecoration(
               color: Colors.red[400],
               image: DecorationImage(
                 image: NetworkImage(
-                    'https://resources.ninghao.org/images/childhood-in-a-picture.jpg'),
+                  'https://resources.ninghao.org/images/childhood-in-a-picture.jpg',
+                ),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                     Colors.red[400].withOpacity(0.6), BlendMode.hardLight),
