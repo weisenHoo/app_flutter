@@ -1,14 +1,49 @@
 import 'package:flutter/material.dart';
 import '../model/post.dart';
 
-class DataTableDemo extends StatefulWidget {
+class PostDataSource extends DataTableSource {
+  final List<Post> _posts = posts;
+  int _selectedCount = 0;
+
   @override
-  _DataTableDemoState createState() => _DataTableDemoState();
+  int get rowCount => _posts.length;
+
+  @override
+  bool get isRowCountApproximate => false;
+
+  @override
+  int get selectedRowCount => _selectedCount;
+
+  @override
+  DataRow getRow(int index) {
+    final Post post = _posts[index];
+
+    return DataRow.byIndex(
+      index: index,
+      cells: <DataCell>[
+        DataCell(Text(post.title)),
+        DataCell(Text(post.author)),
+        DataCell(
+          Container(
+            padding: EdgeInsets.all(8.0),
+            child: Image.network(post.imageUrl),
+          ),
+        ),
+      ],
+    );
+  }
 }
 
-class _DataTableDemoState extends State<DataTableDemo> {
+class PaginatedDataTableDemo extends StatefulWidget {
+  @override
+  _PaginatedDataTableDemoState createState() => _PaginatedDataTableDemoState();
+}
+
+class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
   int _sortColumnIndex = 0;
   bool _sorAscending = true;
+
+  final PostDataSource _postsDataSource = PostDataSource();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +56,10 @@ class _DataTableDemoState extends State<DataTableDemo> {
         padding: EdgeInsets.all(16.0),
         child: ListView(
           children: <Widget>[
-            DataTable(
+            PaginatedDataTable(
+              header: Text('Posts'),
+              rowsPerPage: 5,
+              source: _postsDataSource,
               sortColumnIndex: _sortColumnIndex,
               sortAscending: _sorAscending,
               // onSelectAll: (bool value) {},
@@ -52,28 +90,6 @@ class _DataTableDemoState extends State<DataTableDemo> {
                   label: Text('Image'),
                 ),
               ],
-              rows: posts.map((post) {
-                return DataRow(
-                  selected: post.selected,
-                  onSelectChanged: (bool value) {
-                    setState(() {
-                      if (post.selected != value) {
-                        post.selected = value;
-                      }
-                    });
-                  },
-                  cells: [
-                    DataCell(Text(post.title)),
-                    DataCell(Text(post.author)),
-                    DataCell(
-                      Container(
-                        padding: EdgeInsets.all(8.0),
-                        child: Image.network(post.imageUrl),
-                      ),
-                    ),
-                  ],
-                );
-              }).toList(),
             ),
           ],
         ),
