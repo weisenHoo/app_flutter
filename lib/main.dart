@@ -13,6 +13,7 @@ import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
 import './demo/material_components.dart';
 import './demo/state/state_management_demo.dart';
+import './demo/stream/stream_demo.dart';
 
 void main() => runApp(App());
 
@@ -23,13 +24,14 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/state-management', //初始路由
+      initialRoute: '/stream', //初始路由
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
         '/state-management': (context) => StateManagementDemo(),
+        '/stream': (context) => StreamDemo(),
       },
       //设置主题颜色
       theme: ThemeData(
