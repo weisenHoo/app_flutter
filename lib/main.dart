@@ -19,6 +19,9 @@ import './demo/rxdart/rxdart_demo.dart';
 import './demo/bloc/bloc_demo.dart';
 import './demo/http/http_demo.dart';
 import './demo/animation/animation_demo.dart';
+import './demo/i18n/i18n_demo.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import './demo/i18n/map/weisen_demo_localizations.dart';
 
 void main() => runApp(App());
 
@@ -27,9 +30,25 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      // locale: Locale('en', 'US'),
+      locale: Locale('zh', 'CN'),
+      // localeResolutionCallback:
+      //     (Locale locale, Iterable<Locale> supportedLocales) {
+      //   return Locale('en', 'US');
+      // },
+      localizationsDelegates: [
+        WeisenDemoLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', 'US'),
+        Locale('zh', 'CN'),
+      ],
+
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/animation', //初始路由
+      initialRoute: '/i18n', //初始路由
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
@@ -41,6 +60,7 @@ class App extends StatelessWidget {
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
+        '/i18n': (context) => I18nDemo(),
       },
       //设置主题颜色
       theme: ThemeData(
