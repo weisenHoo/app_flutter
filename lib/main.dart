@@ -17,6 +17,7 @@ import './demo/state/state_management_demo.dart';
 import './demo/stream/stream_demo.dart';
 import './demo/rxdart/rxdart_demo.dart';
 import './demo/bloc/bloc_demo.dart';
+import './demo/http/http_demo.dart';
 
 void main() => runApp(App());
 
@@ -27,7 +28,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: NavigatorDemo(),
-      initialRoute: '/bloc', //初始路由
+      initialRoute: '/http', //初始路由
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
@@ -37,6 +38,7 @@ class App extends StatelessWidget {
         '/stream': (context) => StreamDemo(),
         '/rxdart': (context) => RxDartDemo(),
         '/bloc': (context) => BlocDemo(),
+        '/http': (context) => HttpDemo(),
       },
       //设置主题颜色
       theme: ThemeData(
