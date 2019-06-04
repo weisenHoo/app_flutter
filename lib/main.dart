@@ -21,7 +21,8 @@ import './demo/http/http_demo.dart';
 import './demo/animation/animation_demo.dart';
 import './demo/i18n/i18n_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import './demo/i18n/map/weisen_demo_localizations.dart';
+// import './demo/i18n/map/weisen_demo_localizations.dart';
+import './demo/i18n/intl/weisen_demo_localizations.dart';
 
 void main() => runApp(App());
 
@@ -30,8 +31,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      // locale: Locale('en', 'US'),
-      locale: Locale('zh', 'CN'),
+      locale: Locale('en', 'US'),
+      // locale: Locale('zh', 'CN'),
       // localeResolutionCallback:
       //     (Locale locale, Iterable<Locale> supportedLocales) {
       //   return Locale('en', 'US');

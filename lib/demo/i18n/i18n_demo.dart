@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './map/weisen_demo_localizations.dart';
+// import './map/weisen_demo_localizations.dart';
+import './intl/weisen_demo_localizations.dart';
 
 class I18nDemo extends StatelessWidget {
   @override
@@ -19,7 +20,8 @@ class I18nDemo extends StatelessWidget {
             Text(locale.toString()),
             Text(
               // Localizations.of(context, WeisenDemoLocalizations).title,
-              WeisenDemoLocalizations.of(context).title,
+              // WeisenDemoLocalizations.of(context).title,
+              WeisenDemoLocalizations.of(context).greet('weisen'),
               style: Theme.of(context).textTheme.title,
             ),
           ],
